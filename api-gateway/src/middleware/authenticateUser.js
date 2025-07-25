@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const info = require('../constants/statusInfo');
 const httpConstants = require('../constants/statusInfo');
 require('dotenv').config();
-const logger = require('../logger/logger');
+const logger = require('../loggers/logger');
 
 const validateToken = async(req,res,next) => {
     try{

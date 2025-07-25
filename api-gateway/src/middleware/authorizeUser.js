@@ -1,6 +1,6 @@
 const httpConstants = require('../constants/httpConstants');
 const info = require('../constants/statusInfo');
-const logger = require('../logger/logger');
+const logger = require('../loggers/logger');
 
 const authorizeRole = (allowedRoles) => {
     return (req,res,next) => {

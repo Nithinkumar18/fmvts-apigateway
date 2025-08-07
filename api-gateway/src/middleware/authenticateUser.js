@@ -1,7 +1,7 @@
 
 const jwt = require('jsonwebtoken');
 const info = require('../constants/statusInfo');
-const httpConstants = require('../constants/statusInfo');
+const httpConstants = require('../constants/httpConstants');
 require('dotenv').config();
 const logger = require('../loggers/logger');
 
@@ -18,8 +18,9 @@ const validateToken = async(req,res,next) => {
          next();
     }
     catch(err){
-        logger.info(`SERVICE: ${info.SERVICE_NAME} | ERR-MESSAGE:${info.TOKEN_EXPIRED}`,err);
-       return res.status(httpConstants.UNAUTHORIZED).json({message:info.TOKEN_EXPIRED});
+        logger.error(`SERVICE: ${info.SERVICE_NAME} | ERR-MESSAGE:${info.TOKEN_EXPIRED}`,err);
+        console.log(httpConstants.INTERNAL_SERVER_ERROR);
+       return res.status(httpConstants.INTERNAL_SERVER_ERROR).json({message:info.TOKEN_EXPIRED});
     }
 }
 

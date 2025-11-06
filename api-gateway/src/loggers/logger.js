@@ -1,4 +1,4 @@
-const{createLogger, format, transports} = require('winston');
+const{createLogger, format, transports,addColors} = require('winston');
 
 
  const customLevels = {
@@ -14,7 +14,7 @@ const{createLogger, format, transports} = require('winston');
     }
 
  }
-
+   addColors(customLevels.colors);
  const logger = createLogger({
     levels: customLevels.levels,
     level: 'http',

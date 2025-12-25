@@ -19,7 +19,6 @@ const validateToken = async(req,res,next) => {
     }
     catch(err){
         logger.error(`SERVICE: ${info.SERVICE_NAME} | ERR-MESSAGE:${info.TOKEN_EXPIRED}`,err);
-        console.log(httpConstants.INTERNAL_SERVER_ERROR);
        return res.status(httpConstants.INTERNAL_SERVER_ERROR).json({message:info.TOKEN_EXPIRED});
     }
 }

@@ -52,7 +52,7 @@ app.use('/api/maintenance-ms', validateToken, (req, res, next) => {
     }
     logger.http(`REQUEST sent to service - ${process.env.MS} running on port ${process.env.MSPORT}`);
     next();
-}, createProxyMiddleware({ target: url.notificationServiceUrl, changeOrigin: true }));
+}, createProxyMiddleware({ target: url.maintenanceServiceUrl, changeOrigin: true }));
 
 app.get('/', (req, res) => {
     res.send('🚀 API Gateway is running');

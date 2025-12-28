@@ -89,6 +89,7 @@ The API Gateway uses environment variables to configure service endpoints and po
 
 🔄 Start Application
 
-   npm run start
+  npm run start
+
 
 
